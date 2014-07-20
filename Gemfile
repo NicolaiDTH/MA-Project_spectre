@@ -30,6 +30,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
  
+ gem 'imdb', '~> 0.8'
+
  gem 'devise'
 
 # Use ActiveModel has_secure_password
