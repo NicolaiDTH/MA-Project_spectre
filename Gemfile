@@ -30,9 +30,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
  
+ gem 'capybara'
+
  gem 'imdb', '~> 0.8'
 
  gem 'devise'
+
+ gem 'launchy'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
