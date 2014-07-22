@@ -38,12 +38,8 @@ end
 
  gem 'launchy'
 
- group :production do
-	gem ‘rails_12factor’
-end
-
-group :production do 
-	gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+ 
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 
 # Use ActiveModel has_secure_password
@@ -57,4 +53,10 @@ group :production do
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+
+
+
+
 
