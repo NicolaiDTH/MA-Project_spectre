@@ -9,6 +9,14 @@
 <body>
 
 <%= yield %>
-
+<script>
+ $(document).ready(function(){
+  $('#adder').keypress(function (e) {
+   if (e.which == 13) {
+    $('form').css('visibility', 'hidden');
+   }
+  }
+ };
+</script>
 </body>
 </html>

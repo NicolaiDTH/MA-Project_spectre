@@ -1,12 +1,14 @@
 <br>
 <center>
  <br>
- <h2>add a film</h2>
+ <div class='adder'>
+  <h2>add a film</h2>
  <br>
  <%= form_for 'search' do |f| %>
  <%= f.text_field :search %>
 
  <%= f.submit :+ %>
+ </div>
 
  <% end %>
  <br>
