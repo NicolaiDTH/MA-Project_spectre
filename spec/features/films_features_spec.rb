@@ -29,3 +29,10 @@ describe 'recommender' do
   end
  end
 end
+
+describe 'adding a film' do
+ context 'registering' do
+  before do
+   user = User.create email: 's@s.com', password: '123456789', password_confirmation: '123456789'
+   login_as user
+  end

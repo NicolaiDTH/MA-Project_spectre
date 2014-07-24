@@ -1,6 +1,7 @@
 require 'imdb'
 
 class FilmsController < ApplicationController
+ before_action :authenticate_user!
 
  def index
   if Films.any?
@@ -12,8 +13,9 @@ class FilmsController < ApplicationController
   knownfor = memberbio.drop(3)
   #Drops first three elements in array + gets ids
   knownforselection = knownfor.sample.id
-  #Chooses a random id from this array and creates the recommendation element
+  #Chooses a random id from this array for the poster element
   @recommendation = Imdb::Movie.new(knownforselection).poster
+  #Creates an instance of the recommendation for 
   end
   @films = Films.all
  end
@@ -24,7 +26,17 @@ class FilmsController < ApplicationController
   movie_id = search.movies.first.id
   movie = Imdb::Movie.new(movie_id)
   @films = Films.create(:title => movie.title, :year => movie.year, :runtime => movie.length, :ratings => movie.rating, :votes => movie.votes, :poster => movie.poster, :actors => movie.cast_member_ids.take(3).join(","))
-  session[:added_film] = true
-  redirect_to '/films'
+  session[:first_added] = true
  end
+end
+
+private
+
+def shelve
+end
+
+def dismiss
+end
+
+def list
 end

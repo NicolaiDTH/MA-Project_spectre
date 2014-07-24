@@ -1,18 +1,16 @@
 <center>
 <body>
- <h1>spectre</h1>
- <br>
- <% unless session[:added_film] %>
-  <%= render 'form'%>
- <% end %>
 <div class='recommendations'>
   <%= image_tag @recommendation %>
 </div>
 <br>
-<div class='shelf'>
+ <% unless session[:first_added] %>
+  <%= render 'starter'%>
+ <% end %>
+ <div class='shelf'>
   <% @films.each do |film| %>
    <%= image_tag film.poster %>
   <% end %>
-</div>
+ </div>
 </body>
 </center>
