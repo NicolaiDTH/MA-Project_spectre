@@ -25,22 +25,21 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'devise'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
  
- gem 'capybara'
+gem 'capybara'
 
- gem 'imdb', '~> 0.8'
+gem 'imdb', '~> 0.8'
 
- gem 'devise'
+gem 'launchy'
 
- gem 'launchy'
-
- 
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
-
+gem 'thin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,10 +51,3 @@ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-
-
-
-
-
-
