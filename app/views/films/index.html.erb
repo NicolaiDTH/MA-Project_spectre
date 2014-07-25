@@ -1,11 +1,12 @@
 <center>
 <body>
-<div class='recommendations'>
+ <center>
+ <div class='recommendations'>
   <%= image_tag @recommendation %>
-</div>
-<br>
+ </div>
+</center>
  <% unless session[:first_added] %>
-  <%= render 'starter'%>
+  <%= render 'create'%>
  <% end %>
  <div class='shelf'>
   <% @films.each do |film| %>
