@@ -11,6 +11,7 @@
   <center>
 <% if user_signed_in? %>
   <%= link_to('persona', edit_user_registration_path) %>
+  <img src='http://i57.tinypic.com/x6dc7k.png'></img>
   <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
 <% else %>
   <%= link_to('login', new_user_session_path)  %>
