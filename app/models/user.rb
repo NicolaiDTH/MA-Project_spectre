@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     
+has_many :films
   end
  end
 end
-
-#has_many :films
