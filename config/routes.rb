@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   
   root to: 'films#create'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+=======
+  devise_for :users
+>>>>>>> 78bd37ae66ffa2a29bd844349fe669923160ba6a
   
-  resources :films do
-    resources :recommendations
-  end
+  resources :films
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

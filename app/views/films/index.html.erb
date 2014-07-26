@@ -1,13 +1,14 @@
 <center>
 <body>
- <center>
- <div class='recommendations'>
-  <%= image_tag @recommendation %>
+ <div class='suggestion'>
+
+  <%= image_tag @poster %>
+
+
  </div>
-</center>
- <% unless session[:first_added] %>
+  <% unless @films.any? %>
   <%= render 'create'%>
- <% end %>
+  <% end %>
  <div class='shelf'>
   <% @films.each do |film| %>
    <%= image_tag film.poster %>

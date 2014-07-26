@@ -3,8 +3,12 @@ html {
  top: -10px;
  left: -10px;
  right: -10px;
- width: 100%;
  font-family: 'brandon-grotesque',Arial,sans-serif;
+}
+
+body {
+  background:url('http://i59.tinypic.com/1qgymb.png') no-repeat fixed center;
+  background-size: 475px 475px;
 }
 
 .button {
@@ -18,22 +22,31 @@ html {
 nav {
   background: #000;
   padding: 30px;
-  width: 110%;
+  outline-style: solid;
+  outline-width: thick;
+  outline-color: #009ACD;
 
   a {
     @extend .button;
   }
 }
 
-.recommendations
+.suggestion {
+}
+
+.suggestion
  img {
   width: 216px;
   height: 319px;
+  outline-style: solid;
 }
 
 .shelf {
   background: #7D26CD;
-  padding: 10px;
+  outline-style: solid;
+  outline-width: thick;
+  outline-color: #000;
+  padding: 0px;
   width: 100%;
   position: fixed;
   bottom: -0%;
@@ -43,4 +56,11 @@ nav {
  img {
   width: 76px;
   height: 133px;
+  padding-top: 5px;
+}
+
+input {
+  outline: none;
+  background-color: #fff;
+  border: solid;
 }

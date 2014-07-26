@@ -8,14 +8,15 @@
 </head>
 <body>
  <nav>
+  <center>
 <% if user_signed_in? %>
-  <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
   <%= link_to('persona', edit_user_registration_path) %>
+  <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
 <% else %>
   <%= link_to('login', new_user_session_path)  %>
-  <%= link_to('new persona', new_user_registration_path)  %>  
 <% end %>
-</nav>
+  </center>
+ </nav>
 <center>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
