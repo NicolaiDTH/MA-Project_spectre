@@ -1,15 +1,33 @@
 <center>
-<body>
- <div class='suggestion'>
-  <%= image_tag @poster %>
- </div>
-  <% unless @films.any? %>
+ <body>
+  <div class='suggestion'>
+   <% if @suggestion %>
+    <br>
+    (<%= @suggestion.year %>)
+    <br>
+    <%= @suggestion.title %>
+    <br>
+    <%= image_tag @suggestion.poster %>
+    <br>
+    <%= @suggestion.runtime %> mins
+    <br>
+    <%= @suggestion.ratings %>/10
+    <br>
+    <%= @suggestion.votes %> votes
+  </div>
+</center>  
+  <%= button_to 'Reject', film_path(@suggestion, status: 'rejected'), method: :patch %>
+  <%= button_to 'Shelve', film_path(@suggestion, status: 'shelved'), method: :patch %>
+  <%= button_to 'List', film_path(@suggestion, status: 'listed'), method: :patch %>
+   <% end %>
+<center>   
+  <% unless @shelf.any? %>
   <%= render 'create'%>
   <% end %>
- <div class='shelf'>
-  <% @films.each do |film| %>
-   <%= image_tag film.poster %>
-  <% end %>
- </div>
-</body>
+  <div class='shelf'>
+   <% @shelf.each do |film| %>
+    <%= image_tag film.poster %>
+   <% end %>
+  </div>
+ </body>
 </center>

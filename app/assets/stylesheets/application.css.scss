@@ -15,6 +15,12 @@ body {
   color: #000;
   display: inline-block;
   text-decoration: none;
+  border: 3px solid #000;
+  border-radius: 50%;
+}
+
+p {
+  color: #fff;
 }
 
 nav {
@@ -30,12 +36,18 @@ nav {
 }
 
 .suggestion {
+  width: 350px;
+  height: 350px;
+  color: #fff;
+  border: 5px solid #C0C0C0;
+  border-radius: 50%;
+
 }
 
 .suggestion
  img {
-  width: 216px;
-  height: 319px;
+  width: 128px;
+  height: 190px;
   outline-style: solid;
   outline-color: #C0C0C0;
 }

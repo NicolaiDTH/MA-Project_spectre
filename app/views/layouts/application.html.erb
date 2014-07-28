@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spectre</title>
+  <title>spectre</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,20 +9,19 @@
 <body>
  <nav>
   <center>
-<% if user_signed_in? %>
-  <%= link_to('persona', edit_user_registration_path) %>
-  <img src='http://i57.tinypic.com/x6dc7k.png'></img>
-  <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
-<% else %>
-  <%= link_to('login', new_user_session_path)  %>
-<% end %>
+    <% if user_signed_in? %>
+      <%= link_to('persona', edit_user_registration_path) %>
+      <img src='http://i57.tinypic.com/x6dc7k.png'></img>
+      <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+      <img src='http://i57.tinypic.com/x6dc7k.png'></img>
+      <%= link_to('login', new_user_session_path)  %>
+    <% end %>
+     </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
   </center>
- </nav>
-<center>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
-</center> 
 <script>
  // $(document).ready(function(){
  //  $('#search_search').keypress(function (e) {
