@@ -15,12 +15,16 @@
     <br>
     <%= @suggestion.votes %> votes
   </div>
-</center>  
+  <div class = 'rejectbutton'>
   <%= button_to 'Reject', film_path(@suggestion, status: 'rejected'), method: :patch %>
+  </div>
+  <div class = 'shelfbutton'>
   <%= button_to 'Shelve', film_path(@suggestion, status: 'shelved'), method: :patch %>
+  </div>
+  <div class = 'listbutton'>
   <%= button_to 'List', film_path(@suggestion, status: 'listed'), method: :patch %>
-   <% end %>
-<center>   
+  </div>
+   <% end %>   
   <% unless @shelf.any? %>
   <%= render 'create'%>
   <% end %>
