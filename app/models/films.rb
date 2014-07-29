@@ -1,9 +1,4 @@
 class Films < ActiveRecord::Base
- belongs_to :user
+ has_many :selections
+ has_many :user, through: :selections
 end
-
-
-# id | title | user_id | status
-# 1    Memento  1        shelved
-# 2    Titanic  2        shelved
-# 3    Memento  2        rejected

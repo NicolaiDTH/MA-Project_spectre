@@ -1,5 +1,7 @@
+ <div class= "firstcreator">
  <p>What's your favourite film?</p>
  <%= form_for 'search', url: films_path do |f| %>
  <%= f.text_field :search, autocomplete: "off" %>
  <%= f.submit :+ %>
  <% end %>
+ </div>
