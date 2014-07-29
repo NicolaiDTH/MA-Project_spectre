@@ -1,37 +1,34 @@
 <center>
- <body>
-  <div class='suggestion'>
-   <% if @suggestion %>
-    <br>
-    (<%= @suggestion.year %>)
-    <br>
-    <%= @suggestion.title %>
-    <br>
-    <%= image_tag @suggestion.poster %>
-    <br>
-    <%= @suggestion.runtime %> mins
-    <br>
-    <%= @suggestion.ratings %>/10
-    <br>
-    <%= @suggestion.votes %> votes
-  </div>
-  <div class = 'rejectbutton'>
-  <%= button_to 'Reject', film_path(@suggestion, status: 'rejected'), method: :patch %>
-  </div>
-  <div class = 'shelfbutton'>
-  <%= button_to 'Shelve', film_path(@suggestion, status: 'shelved'), method: :patch %>
-  </div>
-  <div class = 'listbutton'>
-  <%= button_to 'List', film_path(@suggestion, status: 'listed'), method: :patch %>
-  </div>
-   <% end %>   
+ <div class='suggestion'>
+  <% if @suggestion %>
+   <%= image_tag @suggestion.poster %>
+   <br>
+   <%= @suggestion.title %>
+   <br>
+   <%= @suggestion.year %>
+   <br>
+   <%= @suggestion.ratings %>
+   <%= @suggestion.runtime %>
+ </div>
+
+ <div class='actionbuttons'>
+   <%= link_to image_tag("http://i60.tinypic.com/1zf7yg6.png"), film_path(@suggestion, status: 'lost'), method: :patch, class: 'loseitbutton' %>
+   
+   <%= link_to image_tag("http://i57.tinypic.com/5loxhv.png"), film_path(@suggestion, status: 'shelved'), method: :patch, class: 'shelvebutton' %>
+
+   <%= link_to image_tag("http://i57.tinypic.com/f4mebl.png"), film_path(@suggestion, status: 'listed'), method: :patch, class: 'listitbutton' %>
+ </div>
+
+  <% end %>
+
   <% unless @shelf.any? %>
   <%= render 'create'%>
   <% end %>
-  <div class='shelf'>
-   <% @shelf.each do |film| %>
-    <%= image_tag film.poster %>
-   <% end %>
-  </div>
- </body>
-</center>
+
+ <div class='shelf'>
+  <% @shelf.each do |film| %>
+   <%= image_tag film.poster %>
+  <% end %>
+ </div>
+
+ </center>

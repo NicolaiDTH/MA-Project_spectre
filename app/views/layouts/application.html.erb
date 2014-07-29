@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>spectre</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
- <nav>
-  <center>
+ <html>
+  <head>
+   <title>spectre</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+ <body>
+  <nav>
+   <center>
     <% if user_signed_in? %>
-      <%= link_to('persona', edit_user_registration_path) %>
-      <img src='http://i57.tinypic.com/x6dc7k.png'></img>
-      <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
+     <%= link_to('self', edit_user_registration_path) %>
+     <img src='http://i59.tinypic.com/34o96y9.png'></img>
+     <%= link_to('exit', destroy_user_session_path, :method => :delete) %>
     <% else %>
-      <img src='http://i57.tinypic.com/x6dc7k.png'></img>
-      <%= link_to('login', new_user_session_path)  %>
+     <img src='http://i59.tinypic.com/34o96y9.png'></img>
     <% end %>
-     </nav>
+   </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-  </center>
-<script>
- // $(document).ready(function(){
- //  $('#search_search').keypress(function (e) {
- //   if (e.which == 13) {
- //    e.preventDefault();
- //    $('form').css('visibility', 'hidden');
- //   }
- //  })
- // })
-</script>
-</body>
+   </center>
+  <script>
+
+  </script>
+ </body>
 </html>

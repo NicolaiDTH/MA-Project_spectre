@@ -3,6 +3,7 @@ require 'imdb'
 class FilmsController < ApplicationController
  before_action :authenticate_user!
 
+
  def index
 
   if current_user.films.any?
@@ -11,12 +12,19 @@ class FilmsController < ApplicationController
    shelfactor = current_user.selections.where(status: 'shelved').sample.films.actors.split(",").sample
    
    #Finds a randomised movies from the randomised actor
-   movie_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.length && movie.length > 75 }.id
+   random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.length && movie.length > 75 }.id
 
-   #Makes the movie with the id
-   movie = Imdb::Movie.new(movie_id)
-   
+    if (current_user.films.where(movie_id: 'random_id')).exists?
+      index
+    else
+
+    #Makes the movie with the id
+    movie = Imdb::Movie.new(random_id)
+
+   end
    #Creates the database element of the recommendation
+   
+   
    #Makes sure that the film hasn't been seen entered into the database before
    @suggestion = Films.find_or_create_by(:title => movie.title, :movie_id => movie.id, :year => movie.year, :runtime => movie.length, :ratings => movie.rating, :votes => movie.votes, :poster => movie.poster, :actors => movie.cast_member_ids.take(5).join(","))
 
@@ -28,9 +36,15 @@ class FilmsController < ApplicationController
 
   @list = current_user.selections.where(status: 'listed').map(&:films)
 
-  # @list = current_user.films.where(status: 'listed')
+  @lost = current_user.selections.where(status: 'lost').map(&:films)
 
  end
+
+
+ def show
+
+ end
+
 
  def update
 
@@ -41,6 +55,7 @@ class FilmsController < ApplicationController
   redirect_to '/films'
 
  end
+
 
  def create
 
@@ -60,8 +75,10 @@ class FilmsController < ApplicationController
 
  end
 
+
  def destroy
 
  end
+
 
 end
