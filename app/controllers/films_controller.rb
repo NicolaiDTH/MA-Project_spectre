@@ -12,19 +12,19 @@ class FilmsController < ApplicationController
    shelfactor = current_user.selections.where(status: 'shelved').sample.films.actors.split(",").sample
    
    #Finds a randomised movies from the randomised actor
+
    random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.length && movie.length > 75 }.id
 
-    if (current_user.films.where(movie_id: 'random_id')).exists?
-      index
-    else
+   until Films.find_by(movie_id: random_id).nil?
+    random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.length && movie.length > 75 }.id
+   end
 
     #Makes the movie with the id
     movie = Imdb::Movie.new(random_id)
 
-   end
    #Creates the database element of the recommendation
-   
-   
+
+
    #Makes sure that the film hasn't been seen entered into the database before
    @suggestion = Films.find_or_create_by(:title => movie.title, :movie_id => movie.id, :year => movie.year, :runtime => movie.length, :ratings => movie.rating, :votes => movie.votes, :poster => movie.poster, :actors => movie.cast_member_ids.take(5).join(","))
 

@@ -1,14 +1,17 @@
-<center>
+<div class='middle'> 
  <div class='suggestion'>
   <% if @suggestion %>
+   <div class='suggestiontitle'>
+   <%= @suggestion.title %></div>
+   <br>
    <%= image_tag @suggestion.poster %>
    <br>
-   <%= @suggestion.title %>
-   <br>
-   <%= @suggestion.year %>
-   <br>
-   <%= @suggestion.ratings %>
-   <%= @suggestion.runtime %>
+   <div class='suggestionyear'>
+   <%= @suggestion.year %></div>
+   <div class='suggestionruntime'>
+   <%= @suggestion.runtime %></div>
+   <div class='suggestionrating'>
+   <%= @suggestion.ratings %></div>
  </div>
 
  <div class='actionbuttons'>
@@ -25,10 +28,31 @@
   <%= render 'create'%>
   <% end %>
 
- <div class='shelf'>
-  <% @shelf.each do |film| %>
+</div>
+
+<div class='bottom'>
+
+ <div class='reel'>
+
+
+  <div id='div1' class='reelDiv'>
+  <% @lost.sample(16).each do |film| %>
    <%= image_tag film.poster %>
   <% end %>
+  </div>
+
+  <div id='div2' class='reelDiv'>
+  <% @shelf.sample(16).each do |film| %>
+   <%= image_tag film.poster %>
+  <% end %>
+  </div>
+
+  <div id='div3' class='reelDiv'>
+  <% @list.sample(16).each do |film| %>
+   <%= image_tag film.poster %>
+  <% end %>
+  </div>
+
  </div>
 
- </center>
+</div> 

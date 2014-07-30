@@ -7,22 +7,32 @@
     <%= csrf_meta_tags %>
   </head>
  <body>
-  <nav>
-   <center>
+  <center>
+  <div class='top'>
     <% if user_signed_in? %>
      <%= link_to('self', edit_user_registration_path) %>
      <img src='http://i59.tinypic.com/34o96y9.png'></img>
      <%= link_to('exit', destroy_user_session_path, :method => :delete) %>
+      <div class='reelbuttons'>
+       <button class='showSingle' target="1">LOST</button>
+       <button class='showSingle' target="2">SHELF</button>
+       <button class='showSingle' target="3">LIST</button>
+      </div>
     <% else %>
      <img src='http://i59.tinypic.com/34o96y9.png'></img>
     <% end %>
-   </nav>
+  </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-   </center>
   <script>
-
+  $(function(){
+    $('.showSingle').click(function(){
+      $('.reelDiv').hide();
+        $('#div'+$(this).attr('target')).show();
+    });
+  });
   </script>
+  </center>
  </body>
 </html>
