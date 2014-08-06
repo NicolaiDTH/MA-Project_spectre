@@ -12,11 +12,11 @@ class FilmsController < ApplicationController
    shelfactor = current_user.selections.where(status: 'shelved').sample.films.actors.split(",").sample
    
    #Finds a randomised movies from the randomised actor
+   random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.poster && movie.length && movie.length > 75 }.id
 
-   random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.length && movie.length > 75 }.id
-
+   #Safety method in case the movie has come up before
    until Films.find_by(movie_id: random_id).nil?
-    random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.length && movie.length > 75 }.id
+    random_id =  Imdb::Search.new(shelfactor).movies.shuffle.detect {|movie| movie.poster && movie.length && movie.length > 75 }.id
    end
 
     #Makes the movie with the id

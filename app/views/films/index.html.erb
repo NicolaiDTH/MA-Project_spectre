@@ -1,5 +1,7 @@
 <div class='middle'> 
+
  <div class='suggestion'>
+
   <% if @suggestion %>
    <div class='suggestiontitle'>
    <%= @suggestion.title %></div>
@@ -9,9 +11,10 @@
    <div class='suggestionyear'>
    <%= @suggestion.year %></div>
    <div class='suggestionruntime'>
-   <%= @suggestion.runtime %></div>
+   <%= @suggestion.runtime %>m</div>
    <div class='suggestionrating'>
    <%= @suggestion.ratings %></div>
+
  </div>
 
  <div class='actionbuttons'>
@@ -32,23 +35,28 @@
 
 <div class='bottom'>
 
+ <div class='reelbuttons'>
+  <a id='lostbutton' class='showSingle' target="1">LOST</a>
+  <a id='shelfbutton' class='showSingle' target="2">SHELF</a>
+  <a id='listbutton' class='showSingle' target="3">LIST</a>
+ </div>
+
  <div class='reel'>
 
-
   <div id='div1' class='reelDiv'>
-  <% @lost.sample(16).each do |film| %>
+  <% @lost.sample(17).each do |film| %>
    <%= image_tag film.poster %>
   <% end %>
   </div>
 
   <div id='div2' class='reelDiv'>
-  <% @shelf.sample(16).each do |film| %>
+  <% @shelf.sample(17).each do |film| %>
    <%= image_tag film.poster %>
   <% end %>
   </div>
 
   <div id='div3' class='reelDiv'>
-  <% @list.sample(16).each do |film| %>
+  <% @list.sample(17).each do |film| %>
    <%= image_tag film.poster %>
   <% end %>
   </div>

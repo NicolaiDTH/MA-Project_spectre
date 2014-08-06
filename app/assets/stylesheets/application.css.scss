@@ -1,77 +1,150 @@
 /*OVERALL SECTION*/
-html, body {
+/*html, body {
   font-family: 'brandon-grotesque', arial , sans-serif;
   position: fixed;
   height: 100%;
-  width: 100%;
+  width: 99%;
+
 }
 
+center {
+  height: 100%;
+}*/
 
 
 /*TOP SECTION*/
-.top {
-  height: 10%;
-  width: 50%;
+/*.top {
+  height: 5%;
+  width: 100%;
   margin: 0 auto;
+
 }
 
-.button {
-  background: #010334;
+.topbutton {
+  color: #010334;
+  font-size: 20px;
+  border: #010334 solid 3px;
+  border-radius: 50px;
+  padding: 10px;
+  position: fixed;
+  top: 40px;
+}
+
+#profilebutton{
+  left: 485px;
+}
+
+#logoutbutton{
+  right: 485px;
+}
+
+.topbutton:hover {
+  cursor: pointer;
+  border: #010334 solid 3px;
+  border-radius: 50px;
+  padding: 10px;
   color: #fff;
-  display: inline-block;
+  background-color: #010334;
 }
 
-
+*/
 
 /*MIDDLE SECTION*/
-.middle {
-  height: 80%;
-  min-height: 80%;
-  width: 50%;
-  margin: 0 auto;  
+/*.middle {
+  height: 72%;
+  width: 100%;
+  margin: 0 auto;   
+  background-image:url('http://i58.tinypic.com/9sf22p.jpg');
+  background-position: 50% 35%;
+  background-repeat: no-repeat; 
+  background-size: 20%;
 }
 
-/*suggestion category*/
-.suggestion {
+.devise {
+  padding: 100px;
   background-image:url('http://i58.tinypic.com/9sf22p.jpg');
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: 50% 60%;
+  background-size: 30%;
+
+}
+
+.devisebutton{
+  background-color: #010334;
+  color: #fff;
+  border: #010334 solid 3px;
+  border-radius: 50px;
+  padding: 5px;
+  font-size: 10px;
+  width: 180px;
+}
+
+.devisebutton:hover{
+  cursor: pointer;
+  border: #010334 solid 3px;
+  border-radius: 50px;
+  color: #010334;
+  background-color: #fff;
+}
+
+.fbbutton
+img {
+  height: 50px;
+  width: 366px;
+  opacity: 0.75;
+}
+
+.fbbutton
+img:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filmcreator{
+  padding-bottom: 80%;
+}*/
+
+
+/*suggestion category*/
+/*.suggestion {
+  padding-top: 125px;
 }
 
 .suggestiontitle{
-  background-color: #010334;
-  color: #fff;
-  border-color: #010334;
-  border-style: solid;
-  width: 150px;
-  border-radius: 20px 20px;
+  max-width: 210px;
+  max-height: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #010334;
 }
 
 .suggestionyear{
-  background-color: #010334;
-  color: #fff;
-  font-size: 10px;
+  font-size: 15px;
   font-style: italic;
-  border-color: #010334;
-  border-style: solid;
   width: 128px;
-  border-radius: 20px 20px;
+  color: #b1b3c0;
 }
 
 .suggestionrating{
   background-color: #FFFF00;
   color: #000;
-  width: 35px;
-  font-size: 20px;
+  width: 50px;
+  font-size: 25px;
   border-style: outset;
   border-radius: 5px 5px;
+  position: fixed;
+  top: 420px;
+  right: 590px;
 }
 
 .suggestionruntime{
-  width: 30px;
-  height: 30px;
+  padding: 5px;
   border-style: dotted;
   border-radius: 50px 50px;
+  position: fixed;
+  top: 425px;
+  right: 795px;
+  border-color: #b1b3c0;
 }
 
 .suggestion
@@ -79,11 +152,12 @@ html, body {
   width: 128px;
   height: 190px;
   outline-style: solid;
-  outline-color: #010334;
-}
+  outline-color: #b1b3c0;
+}*/
 
 /*selection category*/
-.actionbuttons {
+/*.actionbuttons {
+  position: fixed;
 }
 
 .actionbuttons 
@@ -91,16 +165,23 @@ html, body {
   opacity: 0.5;
 }
 
-.shelvebutton
- img {
+.shelvebutton {
+  position: fixed;
+  top:500px;
+  right:660px;
 }
 
-.listitbutton
- img {
+.listitbutton {
+  position: fixed;
+  top: 250px;
+  right: 465px;
 }
 
-.loseitbutton
- img {
+.loseitbutton {
+  position: fixed;
+  top: 250px;
+  left: 465px;
+
 }
 
 .shelvebutton
@@ -119,23 +200,61 @@ html, body {
  img:hover {
   cursor: pointer;
   opacity: 0.9;
-}
+}*/
 
 
 
 /*BOTTOM SECTION*/
-.bottom {
-  height: 10%;
+/*.bottom {
   width: 100%;
   margin: 0 auto;
 }
 
 /*archives*/
-.reelbuttons {
+/*.reelbuttons {
+  margin: 8px;
+  font-weight: 600;
 }
+
+#lostbutton{
+  color:#d94845;
+  opacity: 0.5;
+  background-color: #fff;
+}
+
+#lostbutton:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+#shelfbutton{
+  color:#b1b3c0;
+  opacity: 0.5;
+  background-color: #fff;
+  margin: 75px;
+}
+
+#shelfbutton:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+#listbutton{
+  color:#7cbdb5;
+  opacity: 0.5;
+  background-color: #fff;
+
+}
+
+#listbutton:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+
 .reel 
  img {
-  padding: 1px;
+  padding: 0.5px;
   opacity: 0.5;
   width: 76px;
   height: 113px;
@@ -148,18 +267,23 @@ html, body {
 
 #div1{
   display: none;
-  border-top-style: dashed;
+  border-top-style: dotted;
   border-color: #d94845;
 }
 
 #div2 {
   display: block;
-  border-top-style: dashed;
+  border-top-style: dotted;
   border-color: #b1b3c0;
 }
 
 #div3 {
   display: none;
-  border-top-style: dashed;
+  border-top-style: dotted;
   border-color: #7cbdb5;
 }
+
+a{
+  color: inherit;
+  text-decoration: none;
+}*/
